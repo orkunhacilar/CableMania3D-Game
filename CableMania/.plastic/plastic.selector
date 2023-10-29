@@ -1,0 +1,4 @@
+repository "CableMania@OrkunFM@cloud"
+  path "/"
+    br "/main"
+    co "/main"
