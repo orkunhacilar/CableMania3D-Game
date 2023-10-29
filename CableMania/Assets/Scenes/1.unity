@@ -1718,7 +1718,7 @@ Transform:
   m_GameObject: {fileID: 227540115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.837, y: 3.037, z: -1.449}
+  m_LocalPosition: {x: -0.939, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1937,7 +1937,7 @@ Transform:
   m_GameObject: {fileID: 294616871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.629, y: 3.037, z: -1.449}
+  m_LocalPosition: {x: 0.939, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2918,7 +2918,7 @@ Transform:
   m_GameObject: {fileID: 459948967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14499998, y: 3.037, z: -1.449}
+  m_LocalPosition: {x: -0.011, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3216,6 +3216,7 @@ GameObject:
   - component: {fileID: 520315133}
   - component: {fileID: 520315132}
   - component: {fileID: 520315131}
+  - component: {fileID: 520315135}
   m_Layer: 0
   m_Name: Yuva_Kirmizi
   m_TagString: Soket
@@ -3303,7 +3304,7 @@ Transform:
   m_GameObject: {fileID: 520315130}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 0.63, y: 0.241, z: -1.153}
+  m_LocalPosition: {x: 0.94, y: 0.241, z: -3.2469997}
   m_LocalScale: {x: 12.106604, y: 22.060297, z: 21.548706}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3313,6 +3314,20 @@ Transform:
   - {fileID: 1490696074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &520315135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520315130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee4463cb595944b2a24fd91242a0133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Doluluk: 0
+  HareketPozisyonu: {fileID: 417363405}
 --- !u!1 &525729890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,6 +5001,7 @@ GameObject:
   - component: {fileID: 709265725}
   - component: {fileID: 709265724}
   - component: {fileID: 709265723}
+  - component: {fileID: 709265727}
   m_Layer: 0
   m_Name: KirmiziSonFis
   m_TagString: Kirmizi_Fis
@@ -5110,6 +5126,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709265721}
   m_Mesh: {fileID: -614233146283366151, guid: d3fec270805184a70b2db42e583bcaa7, type: 3}
+--- !u!114 &709265727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709265721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MevcutSoket: {fileID: 0}
+  SoketRengi: Yuva_Kirmizi
+  _GameManager: {fileID: 1157784515}
 --- !u!1 &709399239
 GameObject:
   m_ObjectHideFlags: 0
@@ -8212,6 +8243,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 294616872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1157784514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157784516}
+  - component: {fileID: 1157784515}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1157784515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157784514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9218d5d9d764d4591b68354e38489aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1157784516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157784514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30106843, y: -4.4972014, z: 28.302315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165535071
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,6 +8737,7 @@ GameObject:
   - component: {fileID: 1228304868}
   - component: {fileID: 1228304867}
   - component: {fileID: 1228304866}
+  - component: {fileID: 1228304870}
   m_Layer: 0
   m_Name: SariSonFis
   m_TagString: Sari_Fis
@@ -8786,6 +8862,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228304864}
   m_Mesh: {fileID: -614233146283366151, guid: d3fec270805184a70b2db42e583bcaa7, type: 3}
+--- !u!114 &1228304870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228304864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MevcutSoket: {fileID: 0}
+  SoketRengi: Yuva_Sari
+  _GameManager: {fileID: 1157784515}
 --- !u!1 &1238119707
 GameObject:
   m_ObjectHideFlags: 0
@@ -9056,6 +9147,7 @@ GameObject:
   - component: {fileID: 1261743275}
   - component: {fileID: 1261743274}
   - component: {fileID: 1261743273}
+  - component: {fileID: 1261743277}
   m_Layer: 0
   m_Name: Yuva_Sari
   m_TagString: Soket
@@ -9143,7 +9235,7 @@ Transform:
   m_GameObject: {fileID: 1261743272}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0.144, y: 0.241, z: -1.153}
+  m_LocalPosition: {x: -0.01000002, y: 0.241, z: -3.2469997}
   m_LocalScale: {x: 12.106604, y: 22.060297, z: 21.548706}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9153,6 +9245,20 @@ Transform:
   - {fileID: 1238119708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1261743277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261743272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee4463cb595944b2a24fd91242a0133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Doluluk: 0
+  HareketPozisyonu: {fileID: 858184757}
 --- !u!1 &1265593503
 GameObject:
   m_ObjectHideFlags: 0
@@ -14656,7 +14762,7 @@ Transform:
   m_GameObject: {fileID: 2180551744596494495}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49991274, y: -0.49991274, z: -0.50008726, w: 0.50008726}
-  m_LocalPosition: {x: 0, y: 4.107, z: -1.16}
+  m_LocalPosition: {x: -0, y: 4.107, z: -3.254}
   m_LocalScale: {x: 9.616053, y: 121.70315, z: 59.74888}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14834,7 +14940,7 @@ Transform:
   m_GameObject: {fileID: 3289271331387484350}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0.836, y: 0.241, z: -1.153}
+  m_LocalPosition: {x: -0.938, y: 0.241, z: -3.2469997}
   m_LocalScale: {x: 12.106604, y: 22.060297, z: 21.548706}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14871,6 +14977,7 @@ GameObject:
   - component: {fileID: 1243518930057002401}
   - component: {fileID: 3937600354737555819}
   - component: {fileID: 3937600354737555820}
+  - component: {fileID: 3937600354737555821}
   m_Layer: 0
   m_Name: Yuva_Mavi
   m_TagString: Soket
@@ -14983,6 +15090,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000003, y: 0.020000001, z: 0.033736445}
   m_Center: {x: 3.6432876e-10, y: 1.9994213e-10, z: 0.0068682237}
+--- !u!114 &3937600354737555821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289271331387484350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee4463cb595944b2a24fd91242a0133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Doluluk: 0
+  HareketPozisyonu: {fileID: 929781737}
 --- !u!33 &4043949514826808485
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15374,6 +15495,7 @@ GameObject:
   - component: {fileID: 8459340431229446378}
   - component: {fileID: 8459340431229446380}
   - component: {fileID: 8459340431229446379}
+  - component: {fileID: 8459340431229446381}
   m_Layer: 0
   m_Name: MaviSonFis
   m_TagString: Mavi_Fis
@@ -15489,6 +15611,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000001, y: 0.02, z: 0.019999998}
   m_Center: {x: 0, y: 0, z: 0.000000007450581}
+--- !u!114 &8459340431229446381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954871232701679935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MevcutSoket: {fileID: 3289271331387484350}
+  SoketRengi: Yuva_Mavi
+  _GameManager: {fileID: 1157784515}
 --- !u!4 &8461755395437851835
 Transform:
   m_ObjectHideFlags: 0
@@ -15550,6 +15687,7 @@ MeshRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1157784516}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1297464449}
