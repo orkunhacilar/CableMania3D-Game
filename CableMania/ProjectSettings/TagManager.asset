@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Soket
+  - Mavi_Fis
+  - Sari_Fis
+  - Kirmizi_Fis
   layers:
   - Default
   - TransparentFX
