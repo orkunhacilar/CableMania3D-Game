@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Soket : MonoBehaviour
 {
-    [SerializeField] private bool Doluluk;
+    public bool Doluluk;
     public GameObject HareketPozisyonu;
 }

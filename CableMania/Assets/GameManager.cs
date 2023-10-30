@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    GameObject SeciliObje; 
+    GameObject SeciliSoket;
+    public bool HareketVar;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +23,45 @@ public class GameManager : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.CompareTag("Mavi_Fis") || hit.collider.CompareTag("Sari_Fis") || hit.collider.CompareTag("Kirmizi_Fis"))
+
+                    // ## SON FIS
+                    if(SeciliObje!=null && !HareketVar)
                     {
-                        hit.collider.GetComponent<SonFis>().SecimPozisyonu(hit.collider.GetComponent<SonFis>().MevcutSoket.GetComponent<Soket>().HareketPozisyonu,
-                        hit.collider.GetComponent<SonFis>().MevcutSoket);
-                        //Yapacagimiz islerimiz
-                        Debug.Log(hit.collider.gameObject.name);
+
+                        if (hit.collider.CompareTag("Mavi_Fis") || hit.collider.CompareTag("Sari_Fis") || hit.collider.CompareTag("Kirmizi_Fis"))
+                        {
+
+                            SonFis _SonFis = hit.collider.GetComponent<SonFis>();
+                            _SonFis.SecimPozisyonu(_SonFis.MevcutSoket.GetComponent<Soket>().HareketPozisyonu, _SonFis.MevcutSoket);
+
+                            //Yapacagimiz islerimiz
+                            // Debug.Log(hit.collider.gameObject.name);
+
+                            SeciliObje = hit.collider.gameObject;
+                            SeciliSoket = _SonFis.MevcutSoket;
+                            HareketVar = true;
+                        }
                     }
+                    // ## SON FIS
+
+                    // ## SOKET
+                    if (hit.collider.CompareTag("Soket")){
+                        if (SeciliObje != null && !hit.collider.GetComponent<Soket>().Doluluk && SeciliSoket != hit.collider.gameObject) // Farkli bir sokete gidiyorsam
+                        {
+                            SeciliSoket.GetComponent<Soket>().Doluluk = false;
+                            Soket _Soket = hit.collider.GetComponent<Soket>();
+                            SeciliObje.GetComponent<SonFis>().PozisyonDegistir(_Soket.HareketPozisyonu, hit.collider.gameObject);
+                            _Soket.Doluluk = true;
+
+
+                            SeciliObje = null;
+                            SeciliSoket = null;
+                          
+                        }
+                        
+                    }
+                    // ## SOKET
+
                 }
             }
         }
