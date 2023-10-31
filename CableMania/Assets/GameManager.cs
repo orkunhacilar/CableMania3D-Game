@@ -75,6 +75,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void CarpismayiKontrolEt(int CarpismaIndex, bool durum)
+    {
+
+    }
 }
     
 
