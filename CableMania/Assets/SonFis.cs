@@ -28,6 +28,13 @@ public class SonFis : MonoBehaviour
         PosDegistir = true; // Pos Degistiri True Yaptim.
     }
 
+    public void SoketeGeriGit(GameObject Soket)
+    {
+        SoketinKendisi = Soket; // Gidilecek yeni soketide SoketinKendisine atadim. // Burda ayni soket mantiken
+       
+        SoketOtur = true; // Pos Degistiri True Yaptim.
+    }
+
     void Start()
     {
         

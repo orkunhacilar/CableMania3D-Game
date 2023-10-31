@@ -54,10 +54,18 @@ public class GameManager : MonoBehaviour
                             SeciliObje.GetComponent<SonFis>().PozisyonDegistir(_Soket.HareketPozisyonu, hit.collider.gameObject); //yeni pozisyonlari yolla
                             _Soket.Doluluk = true; //yeni soketin doldugunu soyle
 
-
+                            //Tekrar secilebilmesi adina
                             SeciliObje = null;
                             SeciliSoket = null;
                           
+                        }else if (SeciliSoket == hit.collider.gameObject) // ayni sokete geri koymaya karar verdiysem
+                        {
+                            SeciliObje.GetComponent<SonFis>().SoketeGeriGit(hit.collider.gameObject);
+
+                            //Tekrar secilebilmesi adina
+                            SeciliObje = null;
+                            SeciliSoket = null;
+                            HareketVar = true;
                         }
                         
                     }
