@@ -8,11 +8,44 @@ public class GameManager : MonoBehaviour
     GameObject SeciliSoket;
     public bool HareketVar;
 
+    [Header("----Level Ayarlari")]
+    public GameObject[] CarpismaKontrolObjeleri;
+    public GameObject[] Fisler;
+    public int HedefSoketSayisi;
+    public bool[] CarpismaDurumlari;
+    int TamamlanmaSayisi;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    public void FisleriKontrolEt()
+    {
+        foreach (var item in Fisler)
+        {
+            if (item.GetComponent<SonFis>().MevcutSoket.name == item.GetComponent<SonFis>().SoketRengi)
+            {
+                TamamlanmaSayisi++;
+            }
+        }
+
+        if(TamamlanmaSayisi == HedefSoketSayisi)
+        {
+            Debug.Log("Tüm soketler yerinde");
+            foreach (var item in CarpismaKontrolObjeleri)
+            {
+                item.SetActive(true);
+            }
+
+        }
+        else
+        {
+            Debug.Log("Eslesme Tamamlanmadi !");
+        }
+        TamamlanmaSayisi = 0;
     }
 
     private void Update()
@@ -78,7 +111,16 @@ public class GameManager : MonoBehaviour
 
     public void CarpismayiKontrolEt(int CarpismaIndex, bool durum)
     {
+        CarpismaDurumlari[CarpismaIndex] = durum;
 
+        if (CarpismaDurumlari[0] && CarpismaDurumlari[1])
+        {
+            Debug.Log("KAZANDIN");
+        }
+        else
+        {
+            Debug.Log("CARPMA VAR");
+        }
     }
 }
     

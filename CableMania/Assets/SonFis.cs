@@ -5,8 +5,8 @@ using UnityEngine;
 public class SonFis : MonoBehaviour
 {
     public GameObject MevcutSoket;
-    [SerializeField] private string SoketRengi;
-    [SerializeField] private GameManager _GameManager;
+    public string SoketRengi;
+    public GameManager _GameManager;
 
     bool Secildi;
     bool PosDegistir;
@@ -70,7 +70,7 @@ public class SonFis : MonoBehaviour
                 SoketOtur = false; // sokete oturdugu icin bu false
                 _GameManager.HareketVar = false; //Hareket bitti burasini false 
                 MevcutSoket = SoketinKendisi; //Soketin kendisi yeni soketimdi. Simdi guncelleyelim ve Mevcutsoketimi soketinkendisi yapalim.
-                //Burada Islemler Var
+                _GameManager.FisleriKontrolEt();
             }
         }
     }

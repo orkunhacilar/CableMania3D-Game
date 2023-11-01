@@ -24,7 +24,7 @@ public class CarpismaKontrol : MonoBehaviour
             }
             else
             {
-                _GameManager.CarpismayiKontrolEt(CarpismaIndex, false); //carpismiyosan true yolla
+                _GameManager.CarpismayiKontrolEt(CarpismaIndex, true); //carpismiyosan true yolla
             }
 
         }
