@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int HedefSoketSayisi;
     public bool[] CarpismaDurumlari;
     int TamamlanmaSayisi;
+    SonFis _SonFis;
 
 
     // Start is called before the first frame update
@@ -64,8 +65,13 @@ public class GameManager : MonoBehaviour
                         if (hit.collider.CompareTag("Mavi_Fis") || hit.collider.CompareTag("Sari_Fis") || hit.collider.CompareTag("Kirmizi_Fis"))
                         {
 
-                            SonFis _SonFis = hit.collider.GetComponent<SonFis>(); //Tıkladıgım son fişin içinde bulunan scripti aldım.
-                            _SonFis.SecimPozisyonu(_SonFis.MevcutSoket.GetComponent<Soket>().HareketPozisyonu, _SonFis.MevcutSoket); //tikladigim fisin icinde bulunan mevcut soketin hareket pozisyonunu ve bizzat kendisini bu fonksyon ile yolladim.
+                            _SonFis = hit.collider.GetComponent<SonFis>(); //Tıkladıgım son fişin içinde bulunan scripti aldım.
+
+                            _SonFis.HareketEt(
+                            "Secim",
+                            _SonFis.MevcutSoket,
+                            _SonFis.MevcutSoket.GetComponent<Soket>().HareketPozisyonu
+                            ); //tikladigim fisin icinde bulunan mevcut soketin hareket pozisyonunu ve bizzat kendisini bu fonksyon ile yolladim.
 
                             //Yapacagimiz islerimiz
                              Debug.Log(hit.collider.gameObject.name);
@@ -83,8 +89,14 @@ public class GameManager : MonoBehaviour
                         if (SeciliObje != null && !hit.collider.GetComponent<Soket>().Doluluk && SeciliSoket != hit.collider.gameObject) // Farkli bir sokete gidiyorsam
                         {
                             SeciliSoket.GetComponent<Soket>().Doluluk = false; // Baska yere gidiyosam kendi soketimi bosalt
+
                             Soket _Soket = hit.collider.GetComponent<Soket>(); //yeni soketin scriptini _Soket olarak al
-                            SeciliObje.GetComponent<SonFis>().PozisyonDegistir(_Soket.HareketPozisyonu, hit.collider.gameObject); //yeni pozisyonlari yolla
+
+                            _SonFis.HareketEt(
+                             "PozisyonDegis",
+                             hit.collider.gameObject,
+                             _Soket.HareketPozisyonu); //yeni pozisyonlari yolla
+
                             _Soket.Doluluk = true; //yeni soketin doldugunu soyle
 
                             //Tekrar secilebilmesi adina
@@ -93,7 +105,9 @@ public class GameManager : MonoBehaviour
                           
                         }else if (SeciliSoket == hit.collider.gameObject) // ayni sokete geri koymaya karar verdiysem
                         {
-                            SeciliObje.GetComponent<SonFis>().SoketeGeriGit(hit.collider.gameObject);
+                            _SonFis.HareketEt(
+                              "SoketeOtur",
+                              hit.collider.gameObject);
 
                             //Tekrar secilebilmesi adina
                             SeciliObje = null;

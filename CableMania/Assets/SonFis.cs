@@ -15,30 +15,28 @@ public class SonFis : MonoBehaviour
     GameObject HareketPozisyonu;
     GameObject SoketinKendisi;
 
-    public void SecimPozisyonu(GameObject GidilecekObje, GameObject Soket) //Soketi havaya kaldirma icin deger toplama
+    public void HareketEt(string islem, GameObject Soket, GameObject GidilecekObje = null)
     {
-        HareketPozisyonu = GidilecekObje; //Takili oldugum soketin hareket poz alip bu scriptte kullanabilmek adina HareketPozisyonuna attim.
-        Secildi = true; // Ve secildiyi true yaptim.
+        switch (islem)
+        {
+            case "Secim":  //Soketi havaya kaldirma icin deger toplama
+                HareketPozisyonu = GidilecekObje; //Takili oldugum soketin hareket poz alip bu scriptte kullanabilmek adina HareketPozisyonuna attim.
+                Secildi = true; // Ve secildiyi true yaptim.
+                break;
+            case "PozisyonDegis":
+                SoketinKendisi = Soket; // Gidilecek yeni soketide SoketinKendisine atadim.
+                HareketPozisyonu = GidilecekObje; // Yeni gidilecek soketin haraket pozisyonunu artik Haraket poz atadim.
+                PosDegistir = true; // Pos Degistiri True Yaptim.
+                break;
+            case "SoketeOtur":
+                SoketinKendisi = Soket; // Gidilecek yeni soketide SoketinKendisine atadim. // Burda ayni soket mantiken
+
+                SoketOtur = true; // Pos Degistiri True Yaptim.
+                break;
+
+        }
     }
 
-    public void PozisyonDegistir(GameObject GidilecekObje, GameObject Soket)
-    {
-        SoketinKendisi = Soket; // Gidilecek yeni soketide SoketinKendisine atadim.
-        HareketPozisyonu = GidilecekObje; // Yeni gidilecek soketin haraket pozisyonunu artik Haraket poz atadim.
-        PosDegistir = true; // Pos Degistiri True Yaptim.
-    }
-
-    public void SoketeGeriGit(GameObject Soket)
-    {
-        SoketinKendisi = Soket; // Gidilecek yeni soketide SoketinKendisine atadim. // Burda ayni soket mantiken
-       
-        SoketOtur = true; // Pos Degistiri True Yaptim.
-    }
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

@@ -1824,7 +1824,7 @@ Transform:
   m_GameObject: {fileID: 227540115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.907, y: 3.037, z: -3.5429997}
+  m_LocalPosition: {x: 0.43, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1965,7 +1965,7 @@ Transform:
   m_GameObject: {fileID: 265073161}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 0.784, y: 0.178, z: -3.452}
+  m_LocalPosition: {x: -0.69, y: 0.178, z: -3.452}
   m_LocalScale: {x: 12.106604, y: 24.287193, z: 19.899591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2166,7 +2166,7 @@ Transform:
   m_GameObject: {fileID: 294616871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.218, y: 3.037, z: -3.5429997}
+  m_LocalPosition: {x: -0.13, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3093,7 +3093,7 @@ Transform:
   m_GameObject: {fileID: 459948967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.348, y: 3.037, z: -3.5429997}
+  m_LocalPosition: {x: 0.96, y: 3.037, z: -3.5429997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4936,7 +4936,7 @@ Transform:
   m_GameObject: {fileID: 636359413}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0.926, y: 0.175, z: -3.452}
+  m_LocalPosition: {x: 0.411, y: 0.175, z: -3.452}
   m_LocalScale: {x: 12.106604, y: 24.287193, z: 19.899591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5245,7 +5245,7 @@ Transform:
   m_GameObject: {fileID: 709265721}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000002, y: -0.49999982, z: 0.5000001, w: 0.49999985}
-  m_LocalPosition: {x: 0.002, y: -2.831, z: 0}
+  m_LocalPosition: {x: 0.55, y: -2.83, z: 0}
   m_LocalScale: {x: 15, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5365,7 +5365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MevcutSoket: {fileID: 919132147848869263}
+  MevcutSoket: {fileID: 636359413}
   SoketRengi: Yuva_Kirmizi
   _GameManager: {fileID: 1157784515}
 --- !u!1 &709399239
@@ -8346,6 +8346,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HareketVar: 0
+  CarpismaKontrolObjeleri:
+  - {fileID: 1473261466}
+  - {fileID: 1947451770}
+  Fisler:
+  - {fileID: 7954871232701679935}
+  - {fileID: 1228304864}
+  - {fileID: 709265721}
+  HedefSoketSayisi: 3
+  CarpismaDurumlari: 0000
 --- !u!4 &1157784516
 Transform:
   m_ObjectHideFlags: 0
@@ -8653,7 +8662,7 @@ Transform:
   m_GameObject: {fileID: 1228304864}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000002, y: -0.49999982, z: 0.5000001, w: 0.49999985}
-  m_LocalPosition: {x: 0.002, y: -2.836, z: 0}
+  m_LocalPosition: {x: -1.09, y: -2.84, z: 0}
   m_LocalScale: {x: 15, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8773,7 +8782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MevcutSoket: {fileID: 1830077712}
+  MevcutSoket: {fileID: 919132147848869263}
   SoketRengi: Yuva_Sari
   _GameManager: {fileID: 1157784515}
 --- !u!1 &1240299252
@@ -10348,7 +10357,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1473261467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12609,7 +12618,7 @@ Transform:
   m_GameObject: {fileID: 1830077712}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0.348, y: 0.175, z: -3.452}
+  m_LocalPosition: {x: 0.96, y: 0.175, z: -3.452}
   m_LocalScale: {x: 12.106604, y: 24.287193, z: 19.899591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13593,7 +13602,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1947451771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14708,7 +14717,7 @@ Transform:
   m_GameObject: {fileID: 919132147848869263}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 0.21899992, y: 0.178, z: -3.452}
+  m_LocalPosition: {x: -0.12900007, y: 0.178, z: -3.452}
   m_LocalScale: {x: 12.106604, y: 24.287193, z: 19.899591}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15342,7 +15351,7 @@ Transform:
   m_GameObject: {fileID: 7954871232701679935}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000002, y: -0.49999982, z: 0.5000001, w: 0.49999985}
-  m_LocalPosition: {x: 0.002, y: -2.813, z: 0}
+  m_LocalPosition: {x: 0.53, y: -2.81, z: 0}
   m_LocalScale: {x: 15, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15629,7 +15638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c6b057d03ba43bea8e6174c0a37456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MevcutSoket: {fileID: 636359413}
+  MevcutSoket: {fileID: 1830077712}
   SoketRengi: Yuva_Mavi
   _GameManager: {fileID: 1157784515}
 --- !u!23 &8713108092772180527
