@@ -159,7 +159,13 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            Debug.Log("KAYBETTIN !!");
+            Debug.Log("CARPMA VAR !!");
+
+            foreach (var item in CarpismaKontrolObjeleri)
+            {
+                item.SetActive(false);
+            }
+
         }
         CarpmaKontrolSayisi = 0;
     }

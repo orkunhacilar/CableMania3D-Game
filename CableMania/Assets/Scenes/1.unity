@@ -8354,7 +8354,7 @@ MonoBehaviour:
   - {fileID: 1228304864}
   - {fileID: 709265721}
   HedefSoketSayisi: 3
-  CarpismaDurumlari: 0000
+  CarpismaDurumlari: 
 --- !u!4 &1157784516
 Transform:
   m_ObjectHideFlags: 0
@@ -10381,7 +10381,7 @@ Transform:
   m_GameObject: {fileID: 1473261466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.051, y: 1.917, z: -3.4934}
+  m_LocalPosition: {x: 0.711, y: 1.917, z: -3.4934}
   m_LocalScale: {x: 0.04, y: 6, z: 0.49}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13626,7 +13626,7 @@ Transform:
   m_GameObject: {fileID: 1947451770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65, y: 1.917, z: -3.4934}
+  m_LocalPosition: {x: 0.135, y: 1.917, z: -3.4934}
   m_LocalScale: {x: 0.04, y: 6, z: 0.49}
   m_ConstrainProportionsScale: 0
   m_Children: []
