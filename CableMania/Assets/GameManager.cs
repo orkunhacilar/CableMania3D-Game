@@ -12,15 +12,19 @@ public class GameManager : MonoBehaviour
     public GameObject[] CarpismaKontrolObjeleri;
     public GameObject[] Fisler;
     public int HedefSoketSayisi;
-    public bool[] CarpismaDurumlari;
+    public List<bool> CarpismaDurumlari;
     int TamamlanmaSayisi;
+    int CarpmaKontrolSayisi;
     SonFis _SonFis;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 0; i < HedefSoketSayisi-1; i++)
+        {
+            CarpismaDurumlari.Add(false);
+        }
     }
 
     public void FisleriKontrolEt()
@@ -39,8 +43,8 @@ public class GameManager : MonoBehaviour
             foreach (var item in CarpismaKontrolObjeleri)
             {
                 item.SetActive(true);
-            }
-
+            } //objeleri ortaya cikar biraz zaman gecsin salinimlar bitince kontrol et kesisim var mi
+            StartCoroutine(CarpismaVarmi());
         }
         else
         {
@@ -129,12 +133,35 @@ public class GameManager : MonoBehaviour
 
         if (CarpismaDurumlari[0] && CarpismaDurumlari[1])
         {
-            Debug.Log("KAZANDIN");
+          //  Debug.Log("KAZANDIN");
         }
         else
         {
-            Debug.Log("CARPMA VAR");
+           // Debug.Log("CARPMA VAR");
         }
+    }
+
+    IEnumerator CarpismaVarmi()
+    {
+        Debug.Log("KONTROL EDILIYOR ........");
+
+        yield return new WaitForSeconds(4f);
+
+        foreach (var item in CarpismaDurumlari)
+        {
+            if (item)
+                CarpmaKontrolSayisi++;
+        }
+        if (CarpmaKontrolSayisi == CarpismaDurumlari.Count)
+        {
+            Debug.Log("KAZANDIN !!!!");
+        }
+
+        else
+        {
+            Debug.Log("KAYBETTIN !!");
+        }
+        CarpmaKontrolSayisi = 0;
     }
 }
     
