@@ -62,9 +62,10 @@ public class SonFis : MonoBehaviour
 
         if (SoketOtur)
         {
-            transform.position = Vector3.Lerp(transform.position, SoketinKendisi.transform.position, .040f); // icinde bulundugum fis soketin kendi pozisyonuna gitsin otursun
+            transform.position = Vector3.Lerp(transform.position, SoketinKendisi.transform.position, .040f); 
             if (Vector3.Distance(transform.position, SoketinKendisi.transform.position) < .010) // mesafe az kalinca yani varinca
             {
+                _GameManager.FisSesi[0].Play();
                 SoketOtur = false; // sokete oturdugu icin bu false
                 _GameManager.HareketVar = false; //Hareket bitti burasini false 
                 MevcutSoket = SoketinKendisi; //Soketin kendisi yeni soketimdi. Simdi guncelleyelim ve Mevcutsoketimi soketinkendisi yapalim.

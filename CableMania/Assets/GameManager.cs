@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     [Header("----Diger Objeler")]
     [SerializeField] private GameObject[] Isiklar;
+    public AudioSource[] FisSesi;
+    
+
+
 
     [Header("----UI OBJELERI")]
     [SerializeField] private GameObject KontrolPaneli;
@@ -190,7 +194,7 @@ public class GameManager : MonoBehaviour
             Isiklar[1].SetActive(false);
             Isiklar[0].SetActive(true);
            
-            KontrolText.text = "There is a collision in the cables ";
+            KontrolText.text = "LOSE !!  ";
             Invoke("PaneliKapat", 2f);
 
             foreach (var item in CarpismaKontrolObjeleri)
