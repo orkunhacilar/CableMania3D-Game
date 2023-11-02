@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] Fisler;
     [SerializeField] private int  HedefSoketSayisi;
     [SerializeField] private List<bool> CarpismaDurumlari;
+    [SerializeField] private int HamleHakki;
+
 
     int TamamlanmaSayisi;
     int CarpmaKontrolSayisi;
@@ -25,11 +27,13 @@ public class GameManager : MonoBehaviour
     [Header("----UI OBJELERI")]
     [SerializeField] private GameObject KontrolPaneli;
     [SerializeField] private TextMeshProUGUI KontrolText;
+    [SerializeField] private TextMeshProUGUI HamleHakkiText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        HamleHakkiText.text = "MOVES : " + HamleHakki.ToString();
         for (int i = 0; i < HedefSoketSayisi-1; i++)
         {
             CarpismaDurumlari.Add(false);
@@ -57,7 +61,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Eslesme Tamamlanmadi !");
+            if (HamleHakki <= 0)
+                Debug.Log("Hamle Hakki Bitti"); // OYUN BITTI PANELI
+          
+            
         }
         TamamlanmaSayisi = 0;
     }
@@ -115,6 +122,9 @@ public class GameManager : MonoBehaviour
                             //Tekrar secilebilmesi adina
                             SeciliObje = null;
                             SeciliSoket = null;
+                            HareketVar = true;
+                            HamleHakki--;
+                            HamleHakkiText.text = "MOVES : " + HamleHakki.ToString();
                           
                         }else if (SeciliSoket == hit.collider.gameObject) // ayni sokete geri koymaya karar verdiysem
                         {
@@ -188,6 +198,8 @@ public class GameManager : MonoBehaviour
                 item.SetActive(false);
             }
 
+            if (HamleHakki <= 0)
+                Debug.Log("Hamle Hakki Bitti"); //OYUN BITYTI PANELI
         }
         CarpmaKontrolSayisi = 0;
     }
