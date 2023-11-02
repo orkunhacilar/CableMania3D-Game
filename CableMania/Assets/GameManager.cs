@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class GameManager : MonoBehaviour
     public bool HareketVar;
 
     [Header("----Level Ayarlari")]
-    public GameObject[] CarpismaKontrolObjeleri;
-    public GameObject[] Fisler;
-    public int HedefSoketSayisi;
-    public List<bool> CarpismaDurumlari;
+    [SerializeField] private GameObject[] CarpismaKontrolObjeleri;
+    [SerializeField] private GameObject[] Fisler;
+    [SerializeField] private int  HedefSoketSayisi;
+    [SerializeField] private List<bool> CarpismaDurumlari;
+
     int TamamlanmaSayisi;
     int CarpmaKontrolSayisi;
     SonFis _SonFis;
+
+    [Header("----Diger Objeler")]
+    [SerializeField] private GameObject[] Isiklar;
+
+    [Header("----UI OBJELERI")]
+    [SerializeField] private GameObject KontrolPaneli;
+    [SerializeField] private TextMeshProUGUI KontrolText;
 
 
     // Start is called before the first frame update
@@ -143,7 +152,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CarpismaVarmi()
     {
-        Debug.Log("KONTROL EDILIYOR ........");
+        Isiklar[0].SetActive(false);
+        Isiklar[1].SetActive(true);
+
+        KontrolPaneli.SetActive(true);
+        KontrolText.text = "Being Checked .... ";
+
+       
 
         yield return new WaitForSeconds(4f);
 
@@ -154,12 +169,19 @@ public class GameManager : MonoBehaviour
         }
         if (CarpmaKontrolSayisi == CarpismaDurumlari.Count)
         {
-            Debug.Log("KAZANDIN !!!!");
+            Isiklar[1].SetActive(false);
+            Isiklar[2].SetActive(true);
+            KontrolText.text = "WIN !!!";
+            //Kazandin Paneli Cikacak.
         }
 
         else
         {
-            Debug.Log("CARPMA VAR !!");
+            Isiklar[1].SetActive(false);
+            Isiklar[0].SetActive(true);
+           
+            KontrolText.text = "There is a collision in the cables ";
+            Invoke("PaneliKapat", 2f);
 
             foreach (var item in CarpismaKontrolObjeleri)
             {
@@ -168,6 +190,11 @@ public class GameManager : MonoBehaviour
 
         }
         CarpmaKontrolSayisi = 0;
+    }
+
+    void PaneliKapat()
+    {
+        KontrolPaneli.SetActive(false);
     }
 }
     
