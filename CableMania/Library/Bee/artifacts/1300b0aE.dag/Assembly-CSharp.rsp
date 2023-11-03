@@ -355,10 +355,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/CarpismaKontrol.cs"
-"Assets/GameManager.cs"
-"Assets/Soket.cs"
-"Assets/SonFis.cs"
+"Assets/Script/CarpismaKontrol.cs"
+"Assets/Script/GameManager.cs"
+"Assets/Script/Soket.cs"
+"Assets/Script/SonFis.cs"
 -langversion:9.0
 
 /deterministic
